@@ -14,6 +14,8 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import profile from "../../assets/images/profile.png";
+import profile_small from "../../assets/images/profile_small.png";
+
 import Header from '../header/Header';
 
 
@@ -31,7 +33,7 @@ class Home extends React.Component{
           }
       }
 
-      componentDidMount(){
+      componentDidMount1(){
            let url = "https://graph.instagram.com/me/media?fields=id,caption&access_token="+this.state.access_token;
            var xhr = new XMLHttpRequest();
            xhr.open("GET",url);
