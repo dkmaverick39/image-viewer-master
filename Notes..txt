@@ -1,0 +1,18 @@
+https://api.instagram.com/oauth/authorize?client_id=711631112789042&redirect_uri=https://www.upgrad.com&scope=user_profile,user_media&response_type=code
+
+
+https://api.instagram.com/oauth/authorize?client_id=3f1b2352416f036f0d1830dd52604345&redirect_uri=https://www.upgrad.com&scope=user_profile,user_media&response_type=code
+
+
+curl -X POST \
+  https://api.instagram.com/oauth/access_token \
+  -F client_id=711631112789042 \
+  -F client_secret=b73852e68b4037ff297ad7a33aa8620f \
+  -F grant_type=authorization_code \
+  -F redirect_uri=https://wwww.upgrad.com \
+  -F code={code}
+
+
+  https://graph.instagram.com/me/media?fields=id,caption&access_token=IGQVJXTk5FOVFYOGpMMlZA3ZAllYWWo2TzJPZAFdKQjh5eXQ3VXU1YmhWSmpDX1ZAhVmdweHdsbzJIWm0tZAldONmVFTkVWRGRKNlNXcTJjZAjVncGVwa29OLXRoY3Q2SGNFLTN4dlBaRG1HVGx1MHRKR1pPawZDZD
+
+  https://graph.instagram.com/17959432390403706?fields=id,media_type,media_url,username,timestamp&access_token=IGQVJXTk5FOVFYOGpMMlZA3ZAllYWWo2TzJPZAFdKQjh5eXQ3VXU1YmhWSmpDX1ZAhVmdweHdsbzJIWm0tZAldONmVFTkVWRGRKNlNXcTJjZAjVncGVwa29OLXRoY3Q2SGNFLTN4dlBaRG1HVGx1MHRKR1pPawZDZD

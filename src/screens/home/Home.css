@@ -1,0 +1,16 @@
+.cardStyle {
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40% ; 
+    margin:0 auto;
+    padding-left:50px;
+    float: left;
+    margin-top: 50px;;    
+}
+
+.likesStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}

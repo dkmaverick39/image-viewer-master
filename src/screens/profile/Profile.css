@@ -1,0 +1,62 @@
+.gridDiv{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    background-color: palegreen;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 70px;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.gridlist{
+    width: 500;
+    height: 450;
+}
+
+.profileHead{
+    margin: 0 auto;
+    margin-top: 30px;
+    width:50%;
+    display: flex;
+    flex-direction: row;    
+    height: 200px;
+    align-items: center;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.profileColumnFlex{
+    display: flex;
+    flex-direction: column;  
+    margin-left: 50px;  
+}
+
+.marginRight{
+    margin-right: 80px;
+}
+
+.imageModal{
+    display: flex;
+    flex-direction: row;  
+    margin: 0 auto;
+    width : 600px;
+    height: 500px;  
+    background-color: white;
+    margin-top: 30px;
+}
+
+.imageModalProfileImg {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+}
+
+.likesStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top:30px;
+}
