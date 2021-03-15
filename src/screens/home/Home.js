@@ -88,7 +88,8 @@ class Home extends React.Component{
 
                     //console.log("profileDetailsArr="+profileDetailsArr[0].media_url)
                     globalThis.setState({
-                       "profileAllDetails" : profileDetailsArr
+                       "profileAllDetails" : profileDetailsArr,
+                       profileAllDetails_bkp : profileDetailsArr
                     })  
 
                  } 
@@ -110,7 +111,8 @@ class Home extends React.Component{
              return eachProfileDetail;
          });
          this.setState({
-            "profileAllDetails": profileNewDetails
+            "profileAllDetails": profileNewDetails,
+            profileAllDetails_bkp : profileNewDetails
          })
       }
       
@@ -125,7 +127,8 @@ class Home extends React.Component{
             return eachProfileDetail;
         });
         this.setState({
-           "profileAllDetails": profileNewDetails
+           "profileAllDetails": profileNewDetails,
+           profileAllDetails_bkp : profileNewDetails
         })
       }
 
@@ -147,7 +150,8 @@ class Home extends React.Component{
             return eachProfileDetail;
         });
         this.setState({
-           "profileAllDetails": profileNewDetails
+           "profileAllDetails": profileNewDetails,
+           profileAllDetails_bkp : profileNewDetails
         })
       }
 
@@ -156,7 +160,7 @@ class Home extends React.Component{
         //       return;
         //   }
          // alert("filterPosts " +searchTxt);
-         let profileNewDetails = this.state.profileAllDetails.filter(eachProfileDetail => {
+         let profileNewDetails = this.state.profileAllDetails_bkp.filter(eachProfileDetail => {
             
             return eachProfileDetail.caption.indexOf(searchTxt) >= 0
             
