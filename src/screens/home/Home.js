@@ -205,6 +205,7 @@ class Home extends React.Component{
            return(
                <Fragment>
                     <Header isHomePage="true"/>
+                      
                     <div>{details}</div>
                </Fragment>
           )

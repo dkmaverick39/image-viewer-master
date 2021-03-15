@@ -66,9 +66,9 @@ class Header extends React.Component{
            <div className="header">
                <span>Image Viewer</span>
                {isHomePage ? <span className="sub_header">
-                <Paper component="form">
+                <Paper component="form" className="searchBox">
                     <IconButton type="submit" style={{padding:"10px"}} aria-label="search">
-                        <SearchIcon />
+                        <SearchIcon  />
                     </IconButton>
                     <InputBase                   
                         placeholder="Search "

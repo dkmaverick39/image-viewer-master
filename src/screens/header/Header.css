@@ -28,3 +28,9 @@
     height: 80px ;
     width: 100px;
 }
+
+.searchBox{
+    background-color: #c0c0c0;
+    width: 300px;
+    border-radius: 4px;
+}
