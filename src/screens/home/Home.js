@@ -29,11 +29,14 @@ class Home extends React.Component{
           super();
           this.state = {
             "profileAllDetails" : [],
+            "profileAllDetails_bkp" : [],
             "access_token":"IGQVJXTk5FOVFYOGpMMlZA3ZAllYWWo2TzJPZAFdKQjh5eXQ3VXU1YmhWSmpDX1ZAhVmdweHdsbzJIWm0tZAldONmVFTkVWRGRKNlNXcTJjZAjVncGVwa29OLXRoY3Q2SGNFLTN4dlBaRG1HVGx1MHRKR1pPawZDZD"
           }
+
+          this.filterPosts = this.filterPosts.bind(this);
       }
 
-      componentDidMount1(){
+      componentDidMount(){
            let url = "https://graph.instagram.com/me/media?fields=id,caption&access_token="+this.state.access_token;
            var xhr = new XMLHttpRequest();
            xhr.open("GET",url);
@@ -148,11 +151,25 @@ class Home extends React.Component{
         })
       }
 
+      filterPosts (searchTxt){
+        //   if(searchTxt == "" || searchTxt == undefined){
+        //       return;
+        //   }
+         // alert("filterPosts " +searchTxt);
+         let profileNewDetails = this.state.profileAllDetails.filter(eachProfileDetail => {
+            
+            return eachProfileDetail.caption.indexOf(searchTxt) >= 0
+            
+        });
+        this.setState({
+           "profileAllDetails": profileNewDetails
+        })
+
+      }
+
       render(){       
            const {profileAllDetails} = this.state;
           console.log(profileAllDetails);
-          
-        
           
           const details = profileAllDetails.length > 0 && profileAllDetails.map( eachCardDetails => {
               
@@ -204,7 +221,7 @@ class Home extends React.Component{
 
            return(
                <Fragment>
-                    <Header isHomePage="true"/>
+                    <Header isHomePage="true"  filterInstaPosts = {this.filterPosts}/>
                       
                     <div>{details}</div>
                </Fragment>

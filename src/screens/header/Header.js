@@ -23,6 +23,7 @@ class Header extends React.Component{
         this.handleModalOpen_1 = this.handleModalOpen_1.bind(this);
         this.redirectToProfilePage = this.redirectToProfilePage.bind(this);
         this.logout = this.logout.bind(this);
+        this.searchItem = this.searchItem.bind(this);
     }
 
 
@@ -51,6 +52,10 @@ class Header extends React.Component{
         })
      }
 
+     searchItem (e){
+        this.props.filterInstaPosts(e.target.value);
+     }
+
     render(){
         const {isProfilePage,isHomePage} = this.props;
         const {redirectToProfile,redirectToLogin} = this.state;
@@ -73,6 +78,7 @@ class Header extends React.Component{
                     <InputBase                   
                         placeholder="Search "
                         inputProps={{ 'aria-label': 'search google maps' }}
+                        onChange = {(e)=>this.searchItem(e)}
                     />
                     
                 </Paper> 
