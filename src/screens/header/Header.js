@@ -54,12 +54,14 @@ class Header extends React.Component{
     render(){
         const {isProfilePage,isHomePage} = this.props;
         const {redirectToProfile,redirectToLogin} = this.state;
+
         if(redirectToProfile){
             return <Redirect to = "/profile"/>
         }
         if(redirectToLogin){
-            return <Redirect to = "/login"/>
+            return <Redirect to = "/logout"/>
         }
+
         return(
            <div className="header">
                <span>Image Viewer</span>
@@ -85,7 +87,7 @@ class Header extends React.Component{
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
                 >
-                    <div style={{marginTop:"80px", marginRight:"60px",float:"right",cursor:"grab",backgroundColor:"white",height:"80px",width:"100px"}}>
+                    <div className="iconModal">
                         <div onClick={this.redirectToProfilePage}>My Account</div>
                         <hr/>
                         <div onClick={this.logout}>Logout</div>

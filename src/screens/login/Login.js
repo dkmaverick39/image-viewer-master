@@ -8,16 +8,19 @@ import './Login.css';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
 
     constructor(){
         super();
         this.state={
-            username:'',
-            password:'',
+            username:'Deepak',
+            password:'abc123',
             usernameError:false,
-            passwordError:false
+            passwordError:false,
+            redirectToHomePage : false,
+            loginValidationError : false
         }
     }
     
@@ -53,10 +56,27 @@ class Login extends React.Component{
         if(!this.state.password){
             this.setState({'passwordError':true});
         }    
+        let username = this.state.username;
+        let password = this.state.password;
+        if(username == 'Deepak' && password == 'abc123'){
+            this.setState({
+                redirectToHomePage : true
+            })
+        }else{
+            this.setState({
+                loginValidationError : true
+            })
+        }
     }
 
 
     render(){
+        
+        const {redirectToHomePage,loginValidationError} = this.state;
+        if(redirectToHomePage){
+            return <Redirect to ="/home" />
+        }
+
         return(
             <div className="loginCard">
                 <Card>
@@ -74,11 +94,12 @@ class Login extends React.Component{
                             <br/><br/>
                             <FormControl>
                                <InputLabel htmlFor="my-password">Password * </InputLabel>
-                               <Input  id="my-password" aria-describedby="my-helper-text" name="password" onChange={this.setPassword}/>
+                               <Input  id="my-password" aria-describedby="my-helper-text" name="password" type="password" onChange={this.setPassword}/>
                             </FormControl>
                             <div className="userpasswordError">{this.state.passwordError ? 'required' : "" }</div>
-                            <br/><br/>
-                           
+                            <br/>
+                            {loginValidationError ? <div style={{color:"red"}}>Incorrect username and/or password</div> : ""}
+                            <br/>
                             <Button variant="contained" color="primary" onClick={this.validateLogin}>
                                 Login
                             </Button>

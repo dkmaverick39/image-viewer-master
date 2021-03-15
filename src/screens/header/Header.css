@@ -18,3 +18,13 @@
     flex-direction: row;
     align-items: center;
 }
+
+.iconModal {
+    margin-top: 80px; 
+    margin-right: 60px;
+    float: right;
+    cursor: grab;
+    background-color: white;
+    height: 80px ;
+    width: 100px;
+}
